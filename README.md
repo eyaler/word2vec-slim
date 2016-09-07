@@ -2,7 +2,7 @@
 
 In several projects i've been using the [word2vec](https://code.google.com/archive/p/word2vec/) pre-trained Google News model [(GoogleNews-vectors-negative300)](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM)
 with the [gensim](https://radimrehurek.com/gensim/) Python library.
-The model was trained over a 3 billion word corpus, and contains 3 million words (of which ~930k are phrases).
+The model was trained over a 3 billion word corpus, and contains 3 million words (of which ~930k are NOT phrases).
 The compressed file size is 1.6 GB, and it takes over 3 minutes to load in gensim on my laptop.
 
 As many words are less useful for my use cases (e.g. Chinese names), I made a slimmer version which saves on disk space, loading time and memory.

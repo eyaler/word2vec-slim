@@ -10,7 +10,7 @@ dict_filenames = ['words.txt.gz', 'words2.txt.gz', 'words3.txt.gz']
 
 words = set()
 for dict_filename in dict_filenames:
-    with gzip.open('dicts/'+dict_filename) as f:
+    with gzip.open('dicts/'+dict_filename, 'rt') as f:
         temp = f.readlines()
         save_len = len(temp)
         for i in range(len(temp)):
@@ -24,7 +24,7 @@ start = time.time()
 model = word2vec.Word2Vec.load_word2vec_format(model_folder + '/' + model_filename, binary=True)
 print('Finished loading original model %.2f min' % ((time.time()-start)/60))
 print('word2vec: %d' % len(model.vocab))
-print('phrases: %d' % len([w for w in model.vocab.keys() if '_' not in w]))
+print('non-phrases: %d' % len([w for w in model.vocab.keys() if '_' not in w]))
 
 indices_to_delete = []
 j = 0
