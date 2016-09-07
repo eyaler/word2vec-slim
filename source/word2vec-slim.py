@@ -1,6 +1,7 @@
 from gensim.models import word2vec
 import time
 import numpy as np
+import gzip
 
 model_folder = 'd:/data'
 model_filename = 'GoogleNews-vectors-negative300.bin.gz'
@@ -9,7 +10,7 @@ dict_filenames = ['words.txt.gz', 'words2.txt.gz', 'words3.txt.gz']
 
 words = set()
 for dict_filename in dict_filenames:
-    with open('dicts/'+dict_filename) as f:
+    with gzip.open('dicts/'+dict_filename) as f:
         temp = f.readlines()
         save_len = len(temp)
         for i in range(len(temp)):
