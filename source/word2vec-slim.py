@@ -2,15 +2,15 @@ from gensim.models import word2vec
 import time
 import numpy as np
 import gzip
+import os
 
 model_folder = 'd:/data'
 model_filename = 'GoogleNews-vectors-negative300.bin.gz'
 slim_filename = 'GoogleNews-vectors-negative300-SLIM.bin.gz'
-dict_filenames = ['words.txt.gz', 'words2.txt.gz', 'words3.txt.gz']
 
 words = set()
-for dict_filename in dict_filenames:
-    with gzip.open('dicts/'+dict_filename, 'rt') as f:
+for dict_filename in os.listdir('dicts/'):
+    with gzip.open('dicts/'+dict_filename, 'rt', encoding='utf8') as f:
         temp = f.readlines()
         save_len = len(temp)
         for i in range(len(temp)):
