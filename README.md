@@ -33,4 +33,4 @@ Notes:
 
 1. If you are filtering words by their vocab dictionary index, note that these indices have been updated according to the smaller container size.
 2. You can find the filtered down Urban Dictionary word list (sorted by decreasing max up vote) [here](https://github.com/eyaler/word2vec-slim/blob/master/source/dicts/urban50.txt.gz).
-3. You will need to install [git lfs](https://git-lfs.github.com/) to be able to clone this.
+3. You will need to install [git lfs](https://git-lfs.github.com/) to be able to clone this. If you cannot download the model file due to data quota exceedance - please let me know!
